@@ -16,4 +16,5 @@ body {
 
 .active{
     border-color: var(--red);
+    color: var(--red);
 }

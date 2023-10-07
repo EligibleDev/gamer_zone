@@ -8,7 +8,7 @@ const Banner = () => {
             autoplay={true}
             autoplayDelay={5000}
             loop={true}
-            className="h-[calc(100vh-150px)]"
+            className="h-[calc(100vh-190px)]"
         >
             <Slide
                 img="1"

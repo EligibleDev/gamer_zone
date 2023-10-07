@@ -26,7 +26,10 @@ const Header = () => {
     ];
 
     return (
-        <header id="header" className="sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]">
+        <header
+            id="header"
+            className="shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]"
+        >
             <nav className="max-w-screen-xl mx-auto flex justify-between lg:items-center">
                 <nav className="lg:flex flex-1 gap-2 justify-center items-end lg:order-1 hidden">
                     {navLinks.map((link) => (
@@ -75,11 +78,13 @@ const Header = () => {
 
                     <div className="text-right hidden">
                         <Button
-                            className="flex gap-1 justify-between items-center mr-3"
-                            color="red"
+                            style={{
+                                filter: `drop-shadow(3px 3px 20px rgba(255, 14, 31, .7))`,
+                            }}
+                            className="flex gap-1 justify-between items-center mr-3 bg-[var(--red)] rounded-br-none rounded-tl-none"
                         >
                             Login
-                            <FiLogIn className="text-base" />
+                            <FiLogIn />
                         </Button>
                     </div>
                 </nav>

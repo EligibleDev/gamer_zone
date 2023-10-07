@@ -8,10 +8,11 @@
     --red: #ff0e1f;
 }
 
-body {
+html {
     font-family: "Rubik", sans-serif;
     background-color: var(--black);
     color: white;
+    scroll-behavior: smooth;
 }
 
 .active{

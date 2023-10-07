@@ -1,21 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo/Logo";
-import { Button, IconButton, Collapse  } from "@material-tailwind/react";
+import { Button, IconButton, Collapse } from "@material-tailwind/react";
 import { FiLogIn } from "react-icons/fi";
 import { HiMenu } from "react-icons/hi";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
-
-    useEffect(() => {
-        window.addEventListener(
-            "resize",
-            () => window.innerWidth >= 960 && setIsNavOpen(false)
-        );
-    }, []);
 
     const navLinks = [
         {
@@ -33,7 +26,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]">
+        <header id="header" className="sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]">
             <nav className="max-w-screen-xl mx-auto flex justify-between lg:items-center">
                 <nav className="lg:flex flex-1 gap-2 justify-center items-end lg:order-1 hidden">
                     {navLinks.map((link) => (
@@ -62,24 +55,29 @@ const Header = () => {
                         <HiMenu className="h-6 w-6" />
                     </IconButton>
 
-                    <Collapse  open={isNavOpen} className="overflow-scroll">
+                    <Collapse open={isNavOpen} className="overflow-scroll">
                         {navLinks.map((link) => (
                             <NavLink
-                                className=" hover:border-[var(--red)] flex flex-col justify-center items-center transition duration-500 text-xs tracking-wider uppercase font-bold"
+                                className=" hover:border-[var(--red)] flex flex-col justify-center items-center transition duration-500 text-xs tracking-wider uppercase font-bold "
                                 key={link?.name}
                                 to={link?.path}
                             >
                                 <span className="p-1">{link?.name}</span>
                             </NavLink>
                         ))}
-                    </Collapse >
+                    </Collapse>
                 </nav>
 
                 <nav className="flex-1 flex lg:items-center items-start justify-end order-3 mt-4 lg:mt-0">
-                    <ProfileMenu />
+                    <span className="mr-4">
+                        <ProfileMenu />
+                    </span>
 
                     <div className="text-right hidden">
-                        <Button className="flex justify-between items-center" color="red">
+                        <Button
+                            className="flex gap-1 justify-between items-center mr-3"
+                            color="red"
+                        >
                             Login
                             <FiLogIn className="text-base" />
                         </Button>

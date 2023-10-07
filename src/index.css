@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+:root{
+    --black: #17161a;
+    --red: #ff0e1f;
+}
+
+body {
     font-family: "Rubik", sans-serif;
+    background-color: var(--black);
+    color: white;
+}
+
+.active{
+    border-color: var(--red);
 }

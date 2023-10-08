@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Tournament Organization",
+        "description": "Our platform offers comprehensive tournament organization services, including hosting and managing online or offline gaming tournaments. We create brackets and schedules, and provide registration and ticketing options for participants.",
+        "price": 500,
+        "image": "https://i.ibb.co/fVgvjCD/gaming-tournaments.jpg"
+    },
+    {
+        "name": "Streaming and Broadcasting",
+        "description": "We facilitate live streaming of tournaments and events, complete with commentary and in-depth analysis during broadcasts. Viewers can interact with the stream, enhancing the gaming experience.",
+        "price": 750,
+        "image": "https://i.ibb.co/kqz2zbG/live-streaming-setups.jpg"
+    },
+    {
+        "name": "Sponsorship Opportunities",
+        "description": "We connect gaming events with potential sponsors, managing sponsorships and advertising within events to boost revenue and exposure.",
+        "price": 800,
+        "image": "https://i.ibb.co/HFgPw3V/Sponsorship-Opportunities.jpg"
+    },
+    {
+        "name": "Customization and Branding",
+        "description": "Allow event organizers to fully customize event pages with branding elements. We offer templates and design tools for event promotion.",
+        "price": 600,
+        "image": "https://i.ibb.co/3crTCrS/8595483.jpg"
+    },
+    {
+        "name": "Mobile App Integration",
+        "description": "Develop a mobile app for easy access to event information and registration. Enable push notifications for event updates.",
+        "price": 1000,
+        "image": "https://i.ibb.co/D98s20y/5794866.jpg"
+    },
+    {
+        "name": "User Rankings and Leaderboards",
+        "description": "Display rankings and leaderboards for various games and events. Encourage competition and engagement among players.",
+        "price": 850,
+        "image": "https://i.ibb.co/wCF5Nm6/19197318.jpg"
+    }
+]

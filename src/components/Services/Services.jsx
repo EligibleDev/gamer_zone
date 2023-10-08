@@ -15,8 +15,14 @@ const Services = ({ data }) => {
                     >
                         <img className="w-full lg:w-1/3" src={item?.image} alt="" />
                         <div>
-                            <h3 className="text-2xl font-semibold pb-3">{item?.name}</h3>
-                            <p>{item?.description?.slice(0, 150)}...</p>
+                            <h3 className="text-2xl font-semibold">{item?.name}</h3>
+                            <p className="py-3">{item?.description?.slice(0, 100)}...</p>
+                            <p>
+                                Price:{" "}
+                                <span className="font-bold text-[var(--red)]">
+                                    ${item?.price}
+                                </span>
+                            </p>
                         </div>
 
                         <MyButton text="Details" link={`/services/${item?.id}`} />

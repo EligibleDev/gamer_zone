@@ -1,38 +1,44 @@
 [
     {
         "name": "Tournament Organization",
-        "description": "Our platform offers comprehensive tournament organization services, including hosting and managing online or offline gaming tournaments. We create brackets and schedules, and provide registration and ticketing options for participants.",
+        "description": "Our platform offers comprehensive tournament organization services, including hosting and managing online or offline gaming tournaments. We create brackets and schedules, and provide registration and ticketing options for participants. With our expertise, you can seamlessly plan and execute gaming events, ensuring a smooth and exciting experience for both players and spectators. From setting up competitive brackets to handling registrations and ticket sales, we've got you covered.",
         "price": 500,
-        "image": "https://i.ibb.co/fVgvjCD/gaming-tournaments.jpg"
+        "image": "https://i.ibb.co/fVgvjCD/gaming-tournaments.jpg",
+        "id": 1
     },
     {
         "name": "Streaming and Broadcasting",
-        "description": "We facilitate live streaming of tournaments and events, complete with commentary and in-depth analysis during broadcasts. Viewers can interact with the stream, enhancing the gaming experience.",
+        "description": "We facilitate live streaming of tournaments and events, complete with commentary and in-depth analysis during broadcasts. Viewers can interact with the stream, enhancing the gaming experience. Our streaming services offer a professional touch to your gaming events, with expert commentators providing real-time insights into the gameplay. Engage with your audience as they cheer on their favorite players, all while enjoying a seamless streaming experience.",
         "price": 750,
-        "image": "https://i.ibb.co/kqz2zbG/live-streaming-setups.jpg"
+        "image": "https://i.ibb.co/kqz2zbG/live-streaming-setups.jpg",
+        "id": 2
     },
     {
         "name": "Sponsorship Opportunities",
-        "description": "We connect gaming events with potential sponsors, managing sponsorships and advertising within events to boost revenue and exposure.",
+        "description": "We connect gaming events with potential sponsors, managing sponsorships and advertising within events to boost revenue and exposure. Partnering with sponsors can significantly enhance the success of your gaming events. Our team specializes in securing sponsorships and seamlessly integrating sponsor branding into your tournaments, ensuring increased revenue and heightened visibility for your events. Elevate your gaming events with strategic sponsorships.",
         "price": 800,
-        "image": "https://i.ibb.co/HFgPw3V/Sponsorship-Opportunities.jpg"
+        "image": "https://i.ibb.co/HFgPw3V/Sponsorship-Opportunities.jpg",
+        "id": 3
     },
     {
         "name": "Customization and Branding",
-        "description": "Allow event organizers to fully customize event pages with branding elements. We offer templates and design tools for event promotion.",
+        "description": "Allow event organizers to fully customize event pages with branding elements. We offer templates and design tools for event promotion. Impress your audience with beautifully designed event pages that reflect your brand identity. Our customization options allow you to create visually appealing and unique event experiences. Whether you're organizing a tournament, convention, or gaming expo, make a lasting impression with our branding solutions.",
         "price": 600,
-        "image": "https://i.ibb.co/3crTCrS/8595483.jpg"
+        "image": "https://i.ibb.co/3crTCrS/8595483.jpg",
+        "id": 4
     },
     {
         "name": "Mobile App Integration",
-        "description": "Develop a mobile app for easy access to event information and registration. Enable push notifications for event updates.",
+        "description": "Develop a mobile app for easy access to event information and registration. Enable push notifications for event updates. Stay connected with your audience through a dedicated event app. Our mobile app integration service ensures that participants and attendees have quick access to event details, schedules, and important updates. With push notifications, you can keep everyone informed about last-minute changes and exciting developments.",
         "price": 1000,
-        "image": "https://i.ibb.co/D98s20y/5794866.jpg"
+        "image": "https://i.ibb.co/D98s20y/5794866.jpg",
+        "id": 5
     },
     {
         "name": "User Rankings and Leaderboards",
-        "description": "Display rankings and leaderboards for various games and events. Encourage competition and engagement among players.",
+        "description": "Display rankings and leaderboards for various games and events. Encourage competition and engagement among players. Foster a sense of competition and community with our user rankings and leaderboards. Showcase the skills and achievements of your participants, inspiring healthy competition and engagement. Whether it's esports or casual gaming, our leaderboard system adds an exciting dimension to your events.",
         "price": 850,
-        "image": "https://i.ibb.co/wCF5Nm6/19197318.jpg"
+        "image": "https://i.ibb.co/wCF5Nm6/19197318.jpg",
+        "id": 6
     }
 ]

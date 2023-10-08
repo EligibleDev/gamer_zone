@@ -13,6 +13,7 @@ const MyRouter = createBrowserRouter([
                   {
                         path: "/",
                         element: <Home/>,
+                        loader: () => fetch('/data.json')
                   },
                   {
                         path: "/about",

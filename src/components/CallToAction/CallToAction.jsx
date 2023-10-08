@@ -3,7 +3,7 @@ import MyButton from "../MyButton/MyButton";
 
 const CallToAction = () => {
     return (
-        <section className=" py-24 bg-[url('/CTA.png')] bg-contain bg-left bg-no-repeat">
+        <section id="cta" className=" py-24 bg-[url('/CTA.png')] bg-contain bg-left bg-no-repeat">
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
                 <div className="flex flex-col justify-center items-center gap-5 w-full sm:w-2/3 lg:w-3/6 mx-auto">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold uppercase">

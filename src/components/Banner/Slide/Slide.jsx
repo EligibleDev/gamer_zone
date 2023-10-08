@@ -13,7 +13,7 @@ const Slide = ({ img, title, body }) => {
 
             <p className="text-center text-base lg:w-3/5 sm:w-4/5 w-full mt-4">{body}</p>
 
-            <a href="#footer" className="absolute bottom-24 text-center">
+            <a href="#cta" className="absolute bottom-24 text-center">
                 <BsMouseFill className="text-white text-3xl transition duration-500 rotate-180" />
             </a>
         </div>
@@ -21,8 +21,8 @@ const Slide = ({ img, title, body }) => {
 };
 
 Slide.propTypes = {
-    img: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
+    img: PropTypes.number,
+    title: PropTypes.string,
+    body: PropTypes.string,
 };
 export default Slide;

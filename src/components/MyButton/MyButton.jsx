@@ -22,7 +22,7 @@ const MyButton = ({ text, icon, link }) => {
 };
 
 MyButton.propTypes = {
-    icon: PropTypes.node,
+    icon: PropTypes.func,
     text: PropTypes.string,
     link: PropTypes.string,
 };

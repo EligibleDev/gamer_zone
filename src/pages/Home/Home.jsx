@@ -1,5 +1,6 @@
 import Banner from "../../components/Banner/Banner";
 import CallToAction from "../../components/CallToAction/CallToAction";
+import CounterSec from "../../components/CounterSec/CounterSec";
 import Highlight from "../../components/Highlight/Highlight";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
                   <Banner/>
                   <Highlight/>
                   <CallToAction/>
+                  <CounterSec/>
             </>
       );
 };

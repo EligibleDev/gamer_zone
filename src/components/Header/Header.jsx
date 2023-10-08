@@ -27,10 +27,7 @@ const Header = () => {
     ];
 
     return (
-        <header
-            id="header"
-            className="shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]"
-        >
+        <header className="shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]">
             <nav className="max-w-screen-xl mx-auto flex justify-between lg:items-center">
                 <nav className="lg:flex flex-1 gap-2 justify-center items-end lg:order-1 hidden">
                     {navLinks.map((link) => (
@@ -78,7 +75,11 @@ const Header = () => {
                     </span>
 
                     <span className="">
-                        <MyButton link="/login-register/login" icon={FiLogIn} text="login" />
+                        <MyButton
+                            link="/login-register/login"
+                            icon={FiLogIn}
+                            text="login"
+                        />
                     </span>
                 </nav>
             </nav>

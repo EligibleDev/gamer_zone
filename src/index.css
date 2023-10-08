@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
+:root {
     --black: #17161a;
     --red: #ff0e1f;
 }
@@ -15,7 +15,8 @@ html {
     scroll-behavior: smooth;
 }
 
-.active{
+.active {
     border-color: var(--red);
     color: var(--red);
 }
+

@@ -6,6 +6,8 @@ import Highlight from "../../components/Highlight/Highlight";
 import Services from "../../components/Services/Services";
 
 const Home = () => {
+      
+
       const data = useLoaderData();
 
       return (

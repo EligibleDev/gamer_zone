@@ -9,6 +9,7 @@ const Banner = () => {
             autoplayDelay={5000}
             loop={true}
             className="h-[calc(100vh-190px)]"
+            id="top"
         >
             <Slide
                 img={1}

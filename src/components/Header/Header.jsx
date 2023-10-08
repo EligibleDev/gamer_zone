@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo/Logo";
-import { Button, IconButton, Collapse } from "@material-tailwind/react";
+import { IconButton, Collapse } from "@material-tailwind/react";
 import { FiLogIn } from "react-icons/fi";
 import { HiMenu } from "react-icons/hi";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import { useState } from "react";
+import MyButton from "../MyButton/MyButton";
 
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -71,22 +72,14 @@ const Header = () => {
                     </Collapse>
                 </nav>
 
-                <nav className="flex-1 flex lg:items-center items-start justify-end order-3 mt-4 lg:mt-0">
-                    <span className="mr-4">
+                <nav className="flex-1 flex lg:items-center items-start justify-end order-3 mt-4 lg:mt-0 mr-4 lg:mr-0">
+                    <span className="hidden">
                         <ProfileMenu />
                     </span>
 
-                    <div className="text-right hidden">
-                        <Button
-                            style={{
-                                filter: `drop-shadow(3px 3px 20px rgba(255, 14, 31, .7))`,
-                            }}
-                            className="flex gap-1 justify-between items-center mr-3 bg-[var(--red)] rounded-br-none rounded-tl-none"
-                        >
-                            Login
-                            <FiLogIn />
-                        </Button>
-                    </div>
+                    <span className="">
+                        <MyButton link="/login-register/login" icon={FiLogIn} text="login" />
+                    </span>
                 </nav>
             </nav>
         </header>

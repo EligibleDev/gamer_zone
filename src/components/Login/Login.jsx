@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    console.log("location from login", location);
 
     const { handleLogin } = useAuth();
 

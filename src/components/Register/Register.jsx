@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card, Input, Checkbox, Button, Typography } from "@material-tailwind/react";
 import SocialAuth from "../SocialAuth/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 const Register = () => {
     const { handleCreateUser, handleUpdateProfile } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleSubmit = (event) => {
         event.preventDefault();

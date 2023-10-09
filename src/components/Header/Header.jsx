@@ -6,6 +6,9 @@ import { HiMenu } from "react-icons/hi";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import { useState } from "react";
 import MyButton from "../MyButton/MyButton";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -22,9 +25,13 @@ const Header = () => {
         },
         {
             name: "FAQ",
-            path: "/faq"
-        }
+            path: "/faq",
+        },
     ];
+
+    useEffect(() => {
+        Aos.init();
+    }, []);
 
     return (
         <header className="shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--black)]">
@@ -32,6 +39,7 @@ const Header = () => {
                 <nav className="lg:flex flex-1 gap-2 justify-center items-end lg:order-1 hidden">
                     {navLinks.map((link) => (
                         <NavLink
+                            data-aos="fade-right"
                             className="border-b-[6px] border-[var(--black)] hover:border-[var(--red)] h-full flex justify-center items-center transition duration-500 text-xs tracking-wider uppercase font-bold"
                             key={link?.name}
                             to={link?.path}

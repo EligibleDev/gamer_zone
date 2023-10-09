@@ -13,6 +13,8 @@ html {
     background-color: var(--black);
     color: white;
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) var(--black);
 }
 
 .active {
@@ -20,3 +22,26 @@ html {
     color: var(--red);
 }
 
+/* custom text selection css */
+
+::selection {
+    background-color: var(--red);
+    color: var(--black);
+}
+
+/* custom scrollbar css */
+
+::-webkit-scrollbar {
+    width: 0.9vw;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: -webkit-linear-gradient(transparent, var(--red));
+    background: linear-gradient(transparent, var(--red));
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: -webkit-linear-gradient(transparent, #96000a);
+    background: linear-gradient(transparent, #96000a);
+}

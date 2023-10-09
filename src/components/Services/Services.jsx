@@ -1,8 +1,15 @@
 import PropTypes from "prop-types";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import MyButton from "../MyButton/MyButton";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Services = ({ data }) => {
+    useEffect(() => {
+        Aos.init();
+    }, []);
+
     return (
         <section className="max-w-screen-xl mx-auto py-24">
             <SectionTitle title="Services" />
@@ -10,6 +17,7 @@ const Services = ({ data }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 px-0 sm:px-5 lg:px-0 gap-0 sm:gap-5 lg:gap-0">
                 {data.map((item) => (
                     <div
+                        data-aos="fade-up"
                         className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5 lg:gap-36 bg-[#0a090a] lg:border-b border-2 border-[var(--red)] lg:border-transparent lg:border-b-[rgba(255,255,255,.05)] p-6"
                         key={item?.id}
                     >

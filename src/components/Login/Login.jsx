@@ -1,7 +1,29 @@
 import { Link } from "react-router-dom";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
+import SocialAuth from "../SocialAuth/SocialAuth";
+import useAuth from "../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
+    const { handleLogin } = useAuth();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        handleLogin(email, password)
+            .then((res) => {
+                console.log(res);
+                toast.success("Login successful");
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error(error.message);
+            });
+    };
+
     return (
         <div className=" flex w-full items-center justify-center">
             <Card color="transparent" shadow={false}>
@@ -11,9 +33,10 @@ const Login = () => {
                 <Typography color="gray" className="font-normal">
                     Enter your details to login.
                 </Typography>
-                <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                     <div className="mb-4 flex flex-col gap-6">
                         <Input
+                            className="text-white"
                             required
                             name="email"
                             type="email"
@@ -21,6 +44,7 @@ const Login = () => {
                             label="Email"
                         />
                         <Input
+                            className="text-white"
                             required
                             name="password"
                             type="password"
@@ -28,8 +52,6 @@ const Login = () => {
                             label="Password"
                         />
                     </div>
-
-                        <p className="text-base text-red-500 pb-3">erorr</p>
 
                     <Button
                         style={{
@@ -43,6 +65,7 @@ const Login = () => {
                             value="LOGIN"
                         />
                     </Button>
+                    <SocialAuth />
                     <Typography color="gray" className="mt-4 text-left font-normal">
                         New Here?{" "}
                         <Link

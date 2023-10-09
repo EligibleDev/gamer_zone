@@ -1,10 +1,17 @@
 import { Accordion, AccordionBody, AccordionHeader } from "@material-tailwind/react";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { useState } from "react";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const FAQ = () => {
     const [open, setOpen] = useState(1);
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
+    useEffect(() => {
+        Aos.init();
+    }, []);
 
     return (
         <section className="bg-[url('/faq-bg.jpg')] bg-cover bg-center-top bg-no-repeat min-h-screen">
@@ -14,6 +21,7 @@ const FAQ = () => {
 
                     <div>
                         <Accordion
+                            data-aos="fade-up"
                             open={open === 1}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -33,6 +41,9 @@ const FAQ = () => {
                             </AccordionBody>
                         </Accordion>
                         <Accordion
+                        data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="300"
                             open={open === 2}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -51,7 +62,9 @@ const FAQ = () => {
                                 payment information.
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="500"
                             open={open === 3}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -71,7 +84,9 @@ const FAQ = () => {
                                 enjoyable experience for everyone
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="700"
                             open={open === 4}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -90,7 +105,9 @@ const FAQ = () => {
                                 participate.
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="900"
                             open={open === 5}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -109,7 +126,9 @@ const FAQ = () => {
                                 any questions or concerns you may have.
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="1100"
                             open={open === 6}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -128,7 +147,9 @@ const FAQ = () => {
                                 within a certain timeframe may be eligible for a refund.
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="1300"
                             open={open === 7}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -148,7 +169,9 @@ const FAQ = () => {
                                 delivery.
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="1500"
                             open={open === 8}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >
@@ -166,7 +189,9 @@ const FAQ = () => {
                                 an admission fee for spectators.
                             </AccordionBody>
                         </Accordion>
-                        <Accordion
+                        <Accordion    data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-delay="1700"
                             open={open === 9}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"
                         >

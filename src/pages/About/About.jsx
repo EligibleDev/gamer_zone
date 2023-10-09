@@ -1,10 +1,17 @@
 import { useState } from "react";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
     const [open, setOpen] = useState(1);
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
+    useEffect(() => {
+        Aos.init();
+    }, []);
 
     return (
         <section>
@@ -15,13 +22,24 @@ const About = () => {
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex flex-col lg:flex-row gap-5 lg:gap-16 justify-between items-center px-5 lg:px-0 py-24">
                     <div className="w-full lg:w-1/2">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase">
+                        <h1
+                            data-aos="fade-up"
+                            className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase"
+                        >
                             Our Mission
                         </h1>
 
-                        <hr className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4" />
+                        <hr
+                            data-aos="fade-up"
+                            className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4"
+                        />
 
-                        <p className="text-sm px-3 sm:px-0 sm:text-base pb-5">
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="500"
+                            data-aos-delay="300"
+                            className="text-sm px-3 sm:px-0 sm:text-base pb-5"
+                        >
                             At Gamer Zone, we are passionate about bringing gamers
                             together through exciting and well-organized gaming events.
                             Our mission is to provide a platform where gamers of all skill
@@ -32,6 +50,7 @@ const About = () => {
                         </p>
                     </div>
                     <img
+                        data-aos="fade-left"
                         className="w-full lg:w-1/2"
                         src="https://i.ibb.co/fVgvjCD/gaming-tournaments.jpg"
                         alt=""
@@ -40,13 +59,22 @@ const About = () => {
 
                 <div className="flex flex-col lg:flex-row-reverse gap-5 lg:gap-16 justify-between items-center px-5 lg:px-0 pb-24">
                     <div className="w-full lg:w-1/2">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase">
+                        <h1
+                            data-aos="fade-up"
+                            className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase"
+                        >
                             Who We Are
                         </h1>
 
-                        <hr className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4" />
+                        <hr
+                            data-aos="fade-up"
+                            className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4"
+                        />
 
-                        <p className="text-sm px-3 sm:px-0 sm:text-base pb-5">
+                        <p
+                            data-aos="fade-up"
+                            className="text-sm px-3 sm:px-0 sm:text-base pb-5"
+                        >
                             Gamer Zone is a dedicated team of gaming enthusiasts who have
                             come together to create memorable gaming experiences. With a
                             collective background in event management and a deep
@@ -55,7 +83,7 @@ const About = () => {
                             participants.
                         </p>
                     </div>
-                    <img
+                    <img data-aos="fade-right"
                         className="w-full lg:w-1/2"
                         src="https://i.ibb.co/HFgPw3V/Sponsorship-Opportunities.jpg"
                         alt=""
@@ -64,13 +92,13 @@ const About = () => {
 
                 <div className="flex flex-col lg:flex-row gap-5 lg:gap-16 justify-between items-center px-5 lg:px-0 pb-24">
                     <div className="w-full lg:w-1/2">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase">
+                        <h1 data-aos="fade-up" className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase">
                             Our Mission
                         </h1>
 
-                        <hr className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4" />
+                        <hr data-aos="fade-up" className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4" />
 
-                        <p className="text-sm px-3 sm:px-0 sm:text-base pb-5">
+                        <p data-aos="fade-up" className="text-sm px-3 sm:px-0 sm:text-base pb-5">
                             At Gamer Zone, we are passionate about bringing gamers
                             together through exciting and well-organized gaming events.
                             Our mission is to provide a platform where gamers of all skill
@@ -80,7 +108,7 @@ const About = () => {
                             gaming.
                         </p>
                     </div>
-                    <img
+                    <img data-aos="fade-left"
                         className="w-full lg:w-1/2"
                         src="https://i.ibb.co/wCF5Nm6/19197318.jpg"
                         alt=""
@@ -89,14 +117,14 @@ const About = () => {
 
                 <div className="flex flex-col lg:flex-row-reverse pb-24 px-5 lg:px-0 gap-5 lg:gap-16 justify-between items-center">
                     <div className="w-full lg:w-1/2">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase">
+                        <h1 data-aos="fade-up" className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase">
                             Our Mission
                         </h1>
 
-                        <hr className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4" />
+                        <hr data-aos="fade-up" className="border-[3px] h-0 border-[var(--red)] w-32 mb-8 mt-4" />
                     </div>
 
-                    <div className="w-full lg:w-1/2">
+                    <div data-aos="fade-right" className="w-full lg:w-1/2">
                         <Accordion
                             open={open === 1}
                             className="mb-2 rounded-lg border border-blue-gray-100 px-4"

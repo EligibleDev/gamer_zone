@@ -2,16 +2,18 @@ import { createBrowserRouter } from "react-router-dom";
 import MyLayout from "../layouts/MyLayout";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
-import Contact from "../pages/Contact/Contact";
 import LoginRegister from "../pages/LoginRegister/LoginRegister";
 import ServiceDetails from "../components/ServiceDetails/ServiceDetails";
 import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
+import FAQ from "../pages/FAQ/FAQ";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const MyRouter = createBrowserRouter([
     {
         path: "/",
         element: <MyLayout />,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
@@ -23,8 +25,8 @@ const MyRouter = createBrowserRouter([
                 element: <About />,
             },
             {
-                path: "/contact",
-                element: <Contact />,
+                path: "/faq",
+                element: <FAQ />,
             },
             {
                 path: "/login-register",

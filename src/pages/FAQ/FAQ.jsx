@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const FAQ = () => {
     const [open, setOpen] = useState(1);
@@ -13,7 +14,10 @@ const FAQ = () => {
         Aos.init();
     }, []);
 
-    return (
+    return (<>
+        <Helmet>
+            <title>FAQ | Gamer Zone</title>
+        </Helmet>
         <section className="bg-[url('/faq-bg.jpg')] bg-cover bg-center-top bg-no-repeat min-h-screen">
             <div className="min-h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center ">
                 <div className=" max-w-screen-xl py-12 lg:py-24 px-5 lg:px-0 flex justify-center flex-col shadow-[0_5px_10px_0_rgba(0,0,0,.35)]">
@@ -213,6 +217,7 @@ const FAQ = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

@@ -3,6 +3,7 @@ import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import SocialAuth from "../SocialAuth/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -28,6 +29,10 @@ const Login = () => {
     };
 
     return (
+       <>
+       <Helmet>
+        <title>Login | Gamer Zone</title>
+       </Helmet>
         <div className=" flex w-full items-center justify-center">
             <Card color="transparent" shadow={false}>
                 <Typography variant="h4" color="white">
@@ -83,7 +88,7 @@ const Login = () => {
                     </Typography>
                 </form>
             </Card>
-        </div>
+        </div></>
     );
 };
 

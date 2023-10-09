@@ -4,6 +4,7 @@ import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/re
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
     const [open, setOpen] = useState(1);
@@ -14,6 +15,10 @@ const About = () => {
     }, []);
 
     return (
+        <>
+        <Helmet>
+            <title>About | Gamer Zone</title>
+        </Helmet>
         <section>
             <div className="bg-[url('/about-bg.jpg')] bg-cover bg-top bg-no-repeat h-96 w-full flex justify-center flex-col shadow-[0_5px_10px_0_rgba(0,0,0,.35)]">
                 <SectionTitle title="About Us" />
@@ -186,6 +191,7 @@ const About = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

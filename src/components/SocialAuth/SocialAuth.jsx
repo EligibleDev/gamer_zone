@@ -1,12 +1,18 @@
 import { Button } from "@material-tailwind/react";
 import useAuth from "../../hooks/useAuth/useAuth";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const SocialAuth = () => {
+    const navigate = useNavigate();
     const { handleGoogleAuth } = useAuth();
 
     const handleSocialLogin = (media) => {
         media()
-            .then((res) => console.log(res))
+            .then((res) => {
+                toast.success("Google login successful");
+                navigate("/");
+            })
             .catch((error) => console.log(error));
     };
 

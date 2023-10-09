@@ -9,10 +9,13 @@ import MyButton from "../MyButton/MyButton";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
+
+    const { user } = useAuth();
 
     const navLinks = [
         {
@@ -78,7 +81,20 @@ const Header = () => {
                 </nav>
 
                 <nav className="flex-1 flex lg:items-center items-start justify-end order-3 mt-4 lg:mt-0 mr-4 lg:mr-0">
-                    <span className="hidden">
+                    {user ? (
+                        <span className="">
+                            <ProfileMenu />
+                        </span>
+                    ) : (
+                        <span className="">
+                            <MyButton
+                                link="/login-register/login"
+                                icon={FiLogIn}
+                                text="login"
+                            />
+                        </span>
+                    )}
+                    {/* <span className="hidden">
                         <ProfileMenu />
                     </span>
 
@@ -88,7 +104,7 @@ const Header = () => {
                             icon={FiLogIn}
                             text="login"
                         />
-                    </span>
+                    </span> */}
                 </nav>
             </nav>
         </header>

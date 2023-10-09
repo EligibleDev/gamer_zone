@@ -9,16 +9,19 @@ import {
     MenuItem,
     Typography,
 } from "@material-tailwind/react";
+import useAuth from "../../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
 
 const ProfileMenu = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+    const { user, handleLogout } = useAuth();
+
     const profileMenuItems = [
         {
-            label: "Baten Ali",
+            label: user?.displayName,
             icon: AiOutlineUser,
             do: () => {
-                console.log("Baten Ali");
                 setIsMenuOpen(false);
             },
         },
@@ -26,7 +29,8 @@ const ProfileMenu = () => {
             label: "Sign Out",
             icon: FiLogOut,
             do: () => {
-                console.log("sign out");
+                handleLogout();
+                toast.success('Sign out successful')
                 setIsMenuOpen(false);
             },
         },
@@ -45,7 +49,7 @@ const ProfileMenu = () => {
                         size="sm"
                         alt="tania andrew"
                         className="border border-gray-900 p-0.5"
-                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                        src={user?.photoURL}
                     />
                     <AiFillCaretDown
                         strokeWidth={2.5}
@@ -55,9 +59,9 @@ const ProfileMenu = () => {
                     />
                 </Button>
             </MenuHandler>
-            <MenuList className="p-1 bg-[var(--black)">
-                {profileMenuItems.map((item, key) => {
-                    const isLastItem = key === profileMenuItems.length - 1;
+            <MenuList className="p-1 bg-[var(--black)]">
+                {profileMenuItems?.map((item, key) => {
+                    const isLastItem = key === profileMenuItems?.length - 1;
                     return (
                         <MenuItem
                             key={item?.label}
@@ -68,7 +72,7 @@ const ProfileMenu = () => {
                                     : ""
                             }`}
                         >
-                            {React.createElement(item?.icon, {
+                            {React?.createElement(item?.icon, {
                                 className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
                                 strokeWidth: 2,
                             })}

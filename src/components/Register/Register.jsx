@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, Input, Checkbox, Button, Typography } from "@material-tailwind/react";
 import SocialAuth from "../SocialAuth/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 
 const Register = () => {
-    const { handleCreateUser } = useAuth();
+    const { handleCreateUser, handleUpdateProfile } = useAuth();
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,17 +19,18 @@ const Register = () => {
         //password validation
         if (password.length < 6) {
             return toast.error("Password has to be at least 6 characters");
-        } else if (!/^(?=.*[A-Z])(?=.*[0-9])/.test(password)) {
+        } else if (!/(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{}|;:'",.<>?])/.test(password)) {
             return toast.error(
-                "Password has to include at least 1 capital letter and 1 number"
+                "Password has to include at least 1 capital letter and 1 special character"
             );
         }
 
         //creating user
         handleCreateUser(email, password)
             .then((res) => {
-                console.log(res.user);
+                handleUpdateProfile(name, img);
                 toast.success("Account created successfully");
+                navigate("/");
             })
             .catch((error) => {
                 console.log(error);

@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import SocialAuth from "../SocialAuth/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
+    const navigate = useNavigate();
+
     const { handleLogin } = useAuth();
 
     const handleSubmit = (event) => {
@@ -15,8 +17,8 @@ const Login = () => {
 
         handleLogin(email, password)
             .then((res) => {
-                console.log(res);
                 toast.success("Login successful");
+                navigate("/");
             })
             .catch((error) => {
                 console.log(error);
@@ -33,7 +35,10 @@ const Login = () => {
                 <Typography color="gray" className="font-normal">
                     Enter your details to login.
                 </Typography>
-                <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                <form
+                    onSubmit={handleSubmit}
+                    className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+                >
                     <div className="mb-4 flex flex-col gap-6">
                         <Input
                             className="text-white"

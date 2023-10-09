@@ -8,12 +8,13 @@ import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
 import FAQ from "../pages/FAQ/FAQ";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 const MyRouter = createBrowserRouter([
     {
         path: "/",
         element: <MyLayout />,
-        // errorElement: <ErrorPage/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
@@ -22,11 +23,19 @@ const MyRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />,
+                element: (
+                    <PrivateRoute>
+                        <About />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/faq",
-                element: <FAQ />,
+                element: (
+                    <PrivateRoute>
+                        <FAQ />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/login-register",
@@ -34,17 +43,21 @@ const MyRouter = createBrowserRouter([
                 children: [
                     {
                         path: "/login-register/login",
-                        element: <Login/>
+                        element: <Login />,
                     },
                     {
                         path: "/login-register/register",
-                        element: <Register/>
-                    }
-                ]
+                        element: <Register />,
+                    },
+                ],
             },
             {
                 path: "services/:id",
-                element: <ServiceDetails />,
+                element: (
+                    <PrivateRoute>
+                        <ServiceDetails />
+                    </PrivateRoute>
+                ),
                 loader: () => fetch("/data.json"),
             },
         ],

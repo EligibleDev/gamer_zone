@@ -30,7 +30,11 @@ const CallToAction = () => {
                         to start your adventure!
                     </p>
 
-                    <MyButton icon={ImLink} text="Join Now" link="/login" />
+                    <MyButton
+                        icon={ImLink}
+                        text="Join Now"
+                        link="/login-register/register"
+                    />
                 </div>
             </div>
         </section>

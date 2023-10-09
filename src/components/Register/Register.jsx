@@ -14,7 +14,6 @@ const Register = () => {
         const img = event.target.img.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        const terms = event.target.terms.checked;
 
         //password validation
         if (password.length < 6) {
@@ -61,7 +60,6 @@ const Register = () => {
                             label="Name"
                         />
                         <Input
-                            required
                             className="text-white"
                             name="img"
                             type="url"

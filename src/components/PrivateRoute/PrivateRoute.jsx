@@ -1,9 +1,11 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
 import PropTypes from "prop-types";
 import { Spinner } from "@material-tailwind/react";
 
 const PrivateRoute = ({ children }) => {
+    const location = useLocation();
+
     const { user, loading } = useAuth();
 
     if (loading) {
@@ -15,7 +17,7 @@ const PrivateRoute = ({ children }) => {
     }
 
     if (!user?.email) {
-        return <Navigate to="/login-register/login" />;
+        return <Navigate state={location.pathname} to="/login-register/login" />;
     }
 
     return children;

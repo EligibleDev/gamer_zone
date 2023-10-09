@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import SocialAuth from "../SocialAuth/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
@@ -6,6 +6,8 @@ import toast from "react-hot-toast";
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log("location from login", location);
 
     const { handleLogin } = useAuth();
 
@@ -18,7 +20,7 @@ const Login = () => {
         handleLogin(email, password)
             .then((res) => {
                 toast.success("Login successful");
-                navigate("/");
+                navigate(location?.state ? location.state : "/");
             })
             .catch((error) => {
                 console.log(error);

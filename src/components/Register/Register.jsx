@@ -29,7 +29,7 @@ const Register = () => {
             .then((res) => {
                 handleUpdateProfile(name, img);
                 toast.success("Account created successfully");
-                navigate("/");
+                navigate(location?.state ? location.state : "/");
             })
             .catch((error) => {
                 console.log(error);
